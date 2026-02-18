@@ -15,13 +15,14 @@ public class RestServer {
 
     public static void main( String[] args ) {
 
-        UndertowJaxrsServer ut = new UndertowJaxrsServer();
+        UndertowJaxrsServer server = new UndertowJaxrsServer();
 
-        TestApplication ta = new TestApplication();
+        TestApplication app = new TestApplication();
+        DataInitializer.initialize();
 
-        ut.deploy(ta);
+        server.deploy(app);
 
-        ut.start(
+        server.start(
                 Undertow.builder()
                         .addHttpListener(8080, "localhost")
 

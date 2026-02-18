@@ -16,29 +16,26 @@
  */
 package fr.istic.taa.jaxrs;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import fr.istic.taa.jaxrs.rest.PetResource;
+import fr.istic.taa.jaxrs.configuration.MyObjectMapperProvider;
+import fr.istic.taa.jaxrs.rest.ArtisteResource;
+import fr.istic.taa.jaxrs.rest.ConcertResource;
+import fr.istic.taa.jaxrs.rest.TicketResource;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
+import java.util.Set;
+
 @ApplicationPath("/")
 public class TestApplication extends Application {
-	
-
     @Override
     public Set<Class<?>> getClasses() {
-
-        final Set<Class<?>> clazzes = new HashSet<Class<?>>();
-
-        clazzes.add(OpenApiResource.class);
-        clazzes.add(PetResource.class);
-//        clazzes.add(AcceptHeaderOpenApiResource.class);
-         
-
-        return clazzes;
+        return Set.of(
+            OpenApiResource.class,
+            ConcertResource.class,
+            TicketResource.class,
+            ArtisteResource.class,
+            MyObjectMapperProvider.class
+        );
     }
-
 }

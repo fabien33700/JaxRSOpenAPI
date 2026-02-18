@@ -68,16 +68,19 @@
 			<version>6.2.4.Final</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.16.0</version>
+		</dependency>
 
-		<!-- OpenAPI-->
-		<!--
-		https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-jaxrs2-jakarta -->
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
 			<artifactId>swagger-jaxrs2-jakarta</artifactId>
 			<version>2.2.15</version>
 		</dependency>
 
+		<!-- OpenAPI-->
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
 			<artifactId>swagger-jaxrs2-servlet-initializer-v2</artifactId>

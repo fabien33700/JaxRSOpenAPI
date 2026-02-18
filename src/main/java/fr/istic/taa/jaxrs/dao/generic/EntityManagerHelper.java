@@ -11,7 +11,7 @@ public class EntityManagerHelper {
 
 	static {
 		emf = Persistence.createEntityManagerFactory("dev");
-		threadLocal = new ThreadLocal<EntityManager>();
+		threadLocal = new ThreadLocal<>();
 	}
 
 	public static EntityManager getEntityManager() {
@@ -28,7 +28,7 @@ public class EntityManagerHelper {
 		EntityManager em = threadLocal.get();
 		if (em != null) {
 			em.close();
-			threadLocal.set(null);
+            threadLocal.remove();
 		}
 	}
 
