@@ -29,7 +29,20 @@ public class Ticket implements Serializable {
     @ManyToOne
     private Concert concert;
 
+    @JsonIgnore
+    @ManyToOne
+    private Utilisateur utilisateur;
+
     // region Generated code
+
+
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
 
     public Ticket() {
     }

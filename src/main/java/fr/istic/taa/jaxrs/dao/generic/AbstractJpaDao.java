@@ -32,7 +32,6 @@ public abstract class AbstractJpaDao<K, T extends Serializable> implements IGene
 		t.begin();
 		entityManager.persist(entity);
 		t.commit();
-
 	}
 
 	public T update(final T entity) {

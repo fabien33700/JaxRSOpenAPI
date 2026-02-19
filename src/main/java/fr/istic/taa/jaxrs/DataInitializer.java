@@ -112,8 +112,8 @@ public class DataInitializer {
 
     private Concert createConcert() {
         Concert concert = new Concert();
-        concert.setCapacite(2500L);
-        concert.setDate(LocalDateTime.now());
+        concert.setCapacite(50L);
+        concert.setDate(LocalDateTime.now().plusDays(7));
         concert.setPopularite(3.5f);
         concert.setGenre("VARIETE");
         concert.setDescription("Super concert!");
