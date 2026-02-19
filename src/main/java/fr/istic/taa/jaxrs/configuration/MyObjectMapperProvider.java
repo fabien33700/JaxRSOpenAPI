@@ -5,6 +5,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.ws.rs.ext.ContextResolver;
 
+/**
+ * Cette classe permet de configurer le serveur pour qu'il
+ * puisse correctement gérer les dates au format JSON
+ */
 public class MyObjectMapperProvider implements ContextResolver<ObjectMapper> {
 
     ObjectMapper objectMapper = createObjectMapper();

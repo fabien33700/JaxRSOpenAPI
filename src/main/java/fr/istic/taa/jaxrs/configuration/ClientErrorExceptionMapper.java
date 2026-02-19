@@ -5,6 +5,11 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 
+/**
+ * Cette classe permet de configurer le serveur
+ * pour que les erreurs héritant de ClientErrorException soit affichées
+ * au format JSON.
+ */
 public class ClientErrorExceptionMapper
         implements ExceptionMapper<ClientErrorException> {
     @Override

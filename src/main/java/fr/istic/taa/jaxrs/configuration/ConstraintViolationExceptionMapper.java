@@ -10,7 +10,11 @@ import jakarta.ws.rs.ext.ExceptionMapper;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class ConstraintViolationExceptionMapper  implements ExceptionMapper<ConstraintViolationException> {
+/**
+ * Cette classe permet de configurer le serveur pour afficher les détails
+ * des erreurs de validation au format JSON
+ */
+public class ConstraintViolationExceptionMapper implements ExceptionMapper<ConstraintViolationException> {
     @Override
     public Response toResponse(ConstraintViolationException exception) {
         return Response
