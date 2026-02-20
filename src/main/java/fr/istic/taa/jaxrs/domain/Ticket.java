@@ -7,6 +7,9 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
+@NamedQuery(name = "Ticket.existsByPlaceAndConcert", query =
+        "select count(t) > 0 from Ticket t where t.concert = :concert and t.numeroPlace = :place"
+)
 public class Ticket implements Serializable {
     @Id
     @GeneratedValue

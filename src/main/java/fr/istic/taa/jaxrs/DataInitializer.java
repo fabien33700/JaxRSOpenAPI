@@ -51,21 +51,224 @@ public class DataInitializer {
 
     private Set<Artiste> createArtistes() {
         Set<Artiste> artistes = new HashSet<>();
+
         {
             Artiste artiste = new Artiste();
-            artiste.setNomScene("Machin");
-            artiste.setNationalite("française");
-            artiste.setPopularite(3);
-            artiste.setSiteWeb("https://machin.co/tournee");
-            artiste.setDateNaissance(LocalDate.of(2001, 3, 6));
+            artiste.setNomScene("Stellar");
+            artiste.setNom("Durand");
+            artiste.setPrenom("Lucas");
+            artiste.setNationalite("FRA");
+            artiste.setPopularite(82);
+            artiste.setDateNaissance(LocalDate.of(1995, 4, 12));
             artistes.add(artiste);
         }
+
         {
             Artiste artiste = new Artiste();
-            artiste.setNomScene("Truc");
-            artiste.setNationalite("anglaise");
-            artiste.setPopularite(4);
-            artiste.setDateNaissance(LocalDate.of(1997, 9, 16));
+            artiste.setNomScene("Luna Vox");
+            artiste.setNom("Moreau");
+            artiste.setPrenom("Emma");
+            artiste.setNationalite("CAN");
+            artiste.setPopularite(74);
+            artiste.setDateNaissance(LocalDate.of(1998, 9, 3));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("DJ Nebula");
+            artiste.setNom("Schmidt");
+            artiste.setPrenom("Karl");
+            artiste.setNationalite("DEU");
+            artiste.setPopularite(69);
+            artiste.setDateNaissance(LocalDate.of(1992, 1, 28));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Crimson Beat");
+            artiste.setNom("Rossi");
+            artiste.setPrenom("Marco");
+            artiste.setNationalite("ITA");
+            artiste.setPopularite(77);
+            artiste.setDateNaissance(LocalDate.of(1990, 6, 14));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("EchoWave");
+            artiste.setNom("Smith");
+            artiste.setPrenom("Olivia");
+            artiste.setNationalite("USA");
+            artiste.setPopularite(91);
+            artiste.setDateNaissance(LocalDate.of(1997, 11, 5));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Noir Silence");
+            artiste.setNom("Dubois");
+            artiste.setPrenom("Hugo");
+            artiste.setNationalite("BEL");
+            artiste.setPopularite(63);
+            artiste.setDateNaissance(LocalDate.of(1988, 2, 19));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Velvet Pulse");
+            artiste.setNom("Garcia");
+            artiste.setPrenom("Sofia");
+            artiste.setNationalite("ESP");
+            artiste.setPopularite(80);
+            artiste.setDateNaissance(LocalDate.of(1996, 7, 22));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Neon Karma");
+            artiste.setNom("Khan");
+            artiste.setPrenom("Ayaan");
+            artiste.setNationalite("PAK");
+            artiste.setPopularite(71);
+            artiste.setDateNaissance(LocalDate.of(1993, 10, 30));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Solaris");
+            artiste.setNom("Ivanov");
+            artiste.setPrenom("Nikita");
+            artiste.setNationalite("RUS");
+            artiste.setPopularite(66);
+            artiste.setDateNaissance(LocalDate.of(1991, 5, 9));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Aria Storm");
+            artiste.setNom("Nguyen");
+            artiste.setPrenom("Linh");
+            artiste.setNationalite("VNM");
+            artiste.setPopularite(79);
+            artiste.setDateNaissance(LocalDate.of(1999, 12, 1));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Bass Phantom");
+            artiste.setNom("Brown");
+            artiste.setPrenom("Ethan");
+            artiste.setNationalite("GBR");
+            artiste.setPopularite(73);
+            artiste.setDateNaissance(LocalDate.of(1987, 8, 17));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Sapphire Sky");
+            artiste.setNom("Lee");
+            artiste.setPrenom("Jisoo");
+            artiste.setNationalite("KOR");
+            artiste.setPopularite(88);
+            artiste.setDateNaissance(LocalDate.of(1994, 3, 11));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Rhythm Rogue");
+            artiste.setNom("Silva");
+            artiste.setPrenom("Mateo");
+            artiste.setNationalite("BRA");
+            artiste.setPopularite(76);
+            artiste.setDateNaissance(LocalDate.of(1992, 4, 27));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Crystal Note");
+            artiste.setNom("Martin");
+            artiste.setPrenom("Chloe");
+            artiste.setNationalite("FRA");
+            artiste.setPopularite(84);
+            artiste.setDateNaissance(LocalDate.of(2000, 6, 6));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Urban Mirage");
+            artiste.setNom("Haddad");
+            artiste.setPrenom("Yanis");
+            artiste.setNationalite("MAR");
+            artiste.setPopularite(67);
+            artiste.setDateNaissance(LocalDate.of(1995, 1, 2));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Zenith Flow");
+            artiste.setNom("Petrov");
+            artiste.setPrenom("Irina");
+            artiste.setNationalite("BGR");
+            artiste.setPopularite(62);
+            artiste.setDateNaissance(LocalDate.of(1989, 9, 14));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Golden Vibe");
+            artiste.setNom("Okafor");
+            artiste.setPrenom("Chinedu");
+            artiste.setNationalite("NGA");
+            artiste.setPopularite(81);
+            artiste.setDateNaissance(LocalDate.of(1993, 12, 21));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("NovaSoul");
+            artiste.setNom("Anderson");
+            artiste.setPrenom("Mia");
+            artiste.setNationalite("AUS");
+            artiste.setPopularite(86);
+            artiste.setDateNaissance(LocalDate.of(1996, 5, 4));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Pulse Raider");
+            artiste.setNom("Kowalski");
+            artiste.setPrenom("Tomasz");
+            artiste.setNationalite("POL");
+            artiste.setPopularite(70);
+            artiste.setDateNaissance(LocalDate.of(1991, 10, 8));
+            artistes.add(artiste);
+        }
+
+        {
+            Artiste artiste = new Artiste();
+            artiste.setNomScene("Aurora Tone");
+            artiste.setNom("Johansson");
+            artiste.setPrenom("Elin");
+            artiste.setNationalite("SWE");
+            artiste.setPopularite(83);
+            artiste.setDateNaissance(LocalDate.of(1997, 7, 19));
             artistes.add(artiste);
         }
         return artistes;

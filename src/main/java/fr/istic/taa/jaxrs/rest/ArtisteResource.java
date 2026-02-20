@@ -2,10 +2,10 @@ package fr.istic.taa.jaxrs.rest;
 
 import fr.istic.taa.jaxrs.dao.generic.ArtisteDao;
 import fr.istic.taa.jaxrs.domain.Artiste;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import fr.istic.taa.jaxrs.dto.ArtisteSearchDTO;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.UriInfo;
 
 import java.util.List;
 
@@ -23,7 +23,8 @@ public class ArtisteResource {
 
   @GET
   @Path("/")
-  public List<Artiste> getArtistes()  {
-      return dao.findAll();
+  public List<Artiste> findArtistes(@Context UriInfo info) {
+    ArtisteSearchDTO searchDTO = new ArtisteSearchDTO(info.getQueryParameters());
+      return dao.searchArtistes(searchDTO);
   }
 }

@@ -10,14 +10,16 @@ public class TicketDao extends AbstractJpaDao<Long, Ticket> {
     }
 
     public boolean existsByConcertAndPlace(String place, Concert concert) {
+        // Named query
         return entityManager
-                .createQuery("select count(t) > 0 from Ticket t where t.concert = :concert and t.numeroPlace = :place", Boolean.class)
+                .createNamedQuery("Ticket.existsByPlaceAndConcert", Boolean.class)
                 .setParameter("place", place)
                 .setParameter("concert", concert)
                 .getSingleResult();
     }
 
     public long countByConcert(Concert concert) {
+        // Query
         return entityManager.createQuery("select count(t) from Ticket t where t.concert = :concert", Long.class)
                 .setParameter("concert", concert)
                 .getSingleResult();
