@@ -1,20 +1,23 @@
 package fr.istic.taa.jaxrs.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.ws.rs.core.MultivaluedMap;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
-
+@Schema(description = "Filtres de recherche pour interroger les artistes")
 public class ArtisteSearchDTO {
+    @Schema(description = "Nom de scène de l'artiste", example = "Daft Punk")
     private String nomScene;
 
+    @Schema(description = "Nom de famille de l'artiste", example = "Bangalter")
     private String nom;
 
+    @Schema(description = "Prénom de l'artiste", example = "Thomas")
     private String prenom;
 
+    @Schema(description = "Nationalité de l'artiste", example = "Française")
     private String nationalite;
 
+    @Schema(description = "Score de popularité pour filtrer (1–5)", minimum = "1", maximum = "5", example = "4")
     private Integer popularite;
 
     public ArtisteSearchDTO(MultivaluedMap<String, String> queryParameters) {
