@@ -1,5 +1,6 @@
-package fr.istic.taa.jaxrs.dao.generic;
+package fr.istic.taa.jaxrs.dao;
 
+import fr.istic.taa.jaxrs.dao.generic.AbstractJpaDao;
 import fr.istic.taa.jaxrs.domain.Artiste;
 import fr.istic.taa.jaxrs.dto.ArtisteSearchDTO;
 import jakarta.persistence.criteria.Predicate;

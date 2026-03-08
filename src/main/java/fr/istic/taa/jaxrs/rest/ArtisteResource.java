@@ -1,6 +1,6 @@
 package fr.istic.taa.jaxrs.rest;
 
-import fr.istic.taa.jaxrs.dao.generic.ArtisteDao;
+import fr.istic.taa.jaxrs.dao.ArtisteDao;
 import fr.istic.taa.jaxrs.domain.Artiste;
 import fr.istic.taa.jaxrs.dto.ArtisteSearchDTO;
 import jakarta.ws.rs.*;
