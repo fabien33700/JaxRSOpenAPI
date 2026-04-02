@@ -1,8 +1,9 @@
 package fr.istic.taa.jaxrs.rest;
 
-import fr.istic.taa.jaxrs.dao.generic.ArtisteDao;
 import fr.istic.taa.jaxrs.domain.Artiste;
+import fr.istic.taa.jaxrs.dto.ArtisteCreateDTO;
 import fr.istic.taa.jaxrs.dto.ArtisteSearchDTO;
+import fr.istic.taa.jaxrs.services.ArtisteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -11,13 +12,14 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @Path("artistes")
@@ -25,7 +27,7 @@ import java.util.List;
 @Tag(name = "Artistes", description = "Gestion des artistes musicaux")
 public class ArtisteResource {
 
-    private final ArtisteDao dao = new ArtisteDao();
+    private final ArtisteService service = new ArtisteService();
 
     @GET
     @Path("/{id}")
@@ -42,7 +44,7 @@ public class ArtisteResource {
     public Artiste getArtisteById(
             @Parameter(description = "Identifiant unique de l'artiste", required = true)
             @PathParam("id") Long id) {
-        return dao.findOne(id);
+        return service.findOne(id);
     }
 
     @GET
@@ -64,6 +66,15 @@ public class ArtisteResource {
     )
     public List<Artiste> findArtistes(@Parameter(hidden = true) @Context UriInfo info) {
         ArtisteSearchDTO searchDTO = new ArtisteSearchDTO(info.getQueryParameters());
-        return dao.searchArtistes(searchDTO);
+        return service.searchArtistes(searchDTO);
+    }
+
+    @POST
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createArtiste(ArtisteCreateDTO artiste) throws URISyntaxException {
+        long id = service.create(artiste);
+        URI uri = new URI("/artistes/" + id);
+        return Response.created(uri).build();
     }
 }
