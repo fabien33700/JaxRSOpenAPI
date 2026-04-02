@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -73,7 +74,18 @@ public class ArtisteResource {
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createArtiste(@Valid ArtisteCreateDTO artiste) throws URISyntaxException {
+    @Operation(
+            summary = "Créer un nouvel artiste",
+            description = "Crée un nouvel artiste. Le nom de scène et la date de naissance sont obligatoires, la popularité doit être comprise entre 0 et 100 et la nationalité doit être un code ISO 3166-1 alpha-2."
+    )
+    @ApiResponse(responseCode = "201", description = "Artiste créé avec succès")
+    @ApiResponse(responseCode = "400", description = "Données invalides (champ manquant ou contrainte de validation non respectée)")
+    public Response createArtiste(
+            @RequestBody(
+                    description = "Informations de l'artiste à créer",
+                    required = true,
+                    content = @Content(schema = @Schema(implementation = ArtisteCreateDTO.class))
+            ) final @Valid ArtisteCreateDTO artiste) throws URISyntaxException {
         long id = service.create(artiste);
         URI uri = new URI("/artistes/" + id);
         return Response.created(uri).build();
