@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
@@ -72,7 +73,7 @@ public class ArtisteResource {
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createArtiste(ArtisteCreateDTO artiste) throws URISyntaxException {
+    public Response createArtiste(@Valid ArtisteCreateDTO artiste) throws URISyntaxException {
         long id = service.create(artiste);
         URI uri = new URI("/artistes/" + id);
         return Response.created(uri).build();

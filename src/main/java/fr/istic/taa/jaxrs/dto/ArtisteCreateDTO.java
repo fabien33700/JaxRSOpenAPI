@@ -3,6 +3,7 @@ package fr.istic.taa.jaxrs.dto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDate;
@@ -11,7 +12,7 @@ public class ArtisteCreateDTO {
     @NotEmpty
     private String nomScene;
 
-    @NotEmpty
+    @NotNull
     private LocalDate dateNaissance;
 
     @Min(0)
