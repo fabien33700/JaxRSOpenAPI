@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "role")
 public abstract class Personne implements Serializable {
     @Id
@@ -21,6 +20,11 @@ public abstract class Personne implements Serializable {
     private LocalDate dateNaissance;
 
     private String email;
+
+    private String hashPassword;
+
+    @Transient
+    public abstract RoleEnum getRole();
 
     // region Generated code
     public Long getPersonneId() {
@@ -64,6 +68,14 @@ public abstract class Personne implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getHashPassword() {
+        return hashPassword;
+    }
+
+    public void setHashPassword(String hashPassword) {
+        this.hashPassword = hashPassword;
     }
 
     @Override

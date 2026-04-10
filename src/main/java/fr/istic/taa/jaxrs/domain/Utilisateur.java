@@ -1,10 +1,13 @@
 package fr.istic.taa.jaxrs.domain;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Transient;
 
 import java.time.LocalDate;
 
 @Entity
+@DiscriminatorValue("utilisateur")
 public class Utilisateur extends Personne {
     private LocalDate dateInscription;
 
@@ -13,6 +16,12 @@ public class Utilisateur extends Personne {
     private Boolean preferenceNotificationEmail;
 
     private Boolean preferenceNotificationPush;
+
+    @Transient
+    @Override
+    public RoleEnum getRole() {
+        return RoleEnum.UTILISATEUR;
+    }
 
     // region Generated code
     public LocalDate getDateInscription() {

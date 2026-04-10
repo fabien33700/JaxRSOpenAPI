@@ -1,10 +1,14 @@
 package fr.istic.taa.jaxrs.domain;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Transient;
 
+import javax.management.relation.Role;
 import java.time.LocalDate;
 
 @Entity
+@DiscriminatorValue("administrateur")
 public class Administrateur extends Personne {
     private LocalDate dateNomination;
 
@@ -25,6 +29,12 @@ public class Administrateur extends Personne {
 
     public void setActif(Boolean actif) {
         this.actif = actif;
+    }
+
+    @Transient
+    @Override
+    public RoleEnum getRole() {
+        return RoleEnum.ADMINISTRATEUR;
     }
 
     @Override

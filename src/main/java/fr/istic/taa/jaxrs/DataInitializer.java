@@ -305,6 +305,7 @@ public class DataInitializer {
         orga.setPrenom("Adeline");
         orga.setDateNaissance(LocalDate.of(1990, 3, 17));
         orga.setEmail("adeline.combourg2@yopmail.com");
+        orga.setHashPassword("$2a$12$W2npC1gc9w.bbOmdLdMF.O6zXvYKuWphkoqYjWPjF2/3Jnyq.yCz6");
 
         orga.setActif(true);
         orga.setNomStructure("Rock en scène");

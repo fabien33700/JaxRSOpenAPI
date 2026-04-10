@@ -1,8 +1,12 @@
 package fr.istic.taa.jaxrs.domain;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Transient;
 
 @Entity
+@DiscriminatorValue("organisateur")
 public class Organisateur extends Personne {
 
     private String nomStructure;
@@ -12,6 +16,12 @@ public class Organisateur extends Personne {
     private String adresseSiege;
 
     private Boolean actif;
+
+    @Transient
+    @Override
+    public RoleEnum getRole() {
+        return RoleEnum.ORGANISATEUR;
+    }
 
     // region Generated code
     public String getNomStructure() {
@@ -56,6 +66,7 @@ public class Organisateur extends Personne {
                 ", personneId=" + personneId +
                 '}';
     }
+
 
     // endregion
 }
