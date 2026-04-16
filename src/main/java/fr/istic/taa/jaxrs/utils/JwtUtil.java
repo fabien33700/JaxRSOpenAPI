@@ -36,7 +36,8 @@ public class JwtUtil {
                 .parseClaimsJws(token)
                 .getBody();
 
-        List<String> rolesList = claims.get("roles", List.class);
+        @SuppressWarnings("unchecked")
+        List<String> rolesList = (List<String>) claims.get("roles", List.class);
         return new TokenPayload(claims.getSubject(), new HashSet<>(rolesList));
     }
 

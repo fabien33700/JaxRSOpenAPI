@@ -33,7 +33,7 @@ public class JWTAuthFilter implements ContainerRequestFilter {
     }
 
     @Override
-    public void filter(ContainerRequestContext requestContext) throws IOException {
+    public void filter(ContainerRequestContext requestContext) {
         RolesAllowed rolesAllowed = getRolesAllowed();
         if (rolesAllowed == null) {
             return;
