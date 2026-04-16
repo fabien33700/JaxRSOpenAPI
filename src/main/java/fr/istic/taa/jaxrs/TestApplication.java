@@ -3,6 +3,7 @@ package fr.istic.taa.jaxrs;
 import fr.istic.taa.jaxrs.configuration.ClientErrorExceptionMapper;
 import fr.istic.taa.jaxrs.configuration.ConstraintViolationExceptionMapper;
 import fr.istic.taa.jaxrs.configuration.MyObjectMapperProvider;
+import fr.istic.taa.jaxrs.filters.JWTAuthFilter;
 import fr.istic.taa.jaxrs.rest.*;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 import jakarta.ws.rs.ApplicationPath;
@@ -23,7 +24,8 @@ public class TestApplication extends Application {
             AuthResource.class,
             ClientErrorExceptionMapper.class,
             ConstraintViolationExceptionMapper.class,
-            MyObjectMapperProvider.class
+            MyObjectMapperProvider.class,
+            JWTAuthFilter.class
         );
     }
 }

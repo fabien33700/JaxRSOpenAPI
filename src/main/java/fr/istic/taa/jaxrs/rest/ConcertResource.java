@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
@@ -21,6 +22,7 @@ import java.util.List;
 
 @Path("concerts")
 @Produces({"application/json"})
+@RolesAllowed({"organisateur", "administrateur"})
 @Tag(name = "Concerts", description = "Gestion des concerts musicaux")
 public class ConcertResource {
 
